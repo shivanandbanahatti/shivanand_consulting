@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<title>Blog — ERPNext Implementation, India GST &amp; Integrations | Shivanand Banahatti</title>
+	<meta name="description" content="Practical notes on ERPNext implementation cost in India, ERP vs Tally, rescue projects, Razorpay integrations, and FMCG distribution — from an ERPNext architect in Bangalore." />
+	<meta name="keywords" content="ERPNext blog India, ERPNext implementation, Frappe consultant, GST ERP, Razorpay ERPNext" />
+	<link rel="canonical" href="https://shivanandbanahatti.com/blog.html" />
+	<meta property="og:title" content="ERPNext Insights — Implementation, GST, Integrations | Shivanand Banahatti, Founder" />
+	<meta property="og:description" content="Practical notes on ERPNext implementation cost in India, ERP vs Tally, rescue projects, Razorpay integrations, and FMCG distribution — from an ERPNext architect in Bangalore." />
+	<meta property="og:url" content="https://shivanandbanahatti.com/blog.html" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://shivanandbanahatti.com/Shivanand.jpg" />
+	<meta property="og:site_name" content="Shivanand Banahatti — Founder, ATHRU Technologies" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="ERPNext Insights — Implementation, GST, Integrations | Shivanand Banahatti, Founder" />
+	<meta name="twitter:description" content="Practical notes on ERPNext implementation cost in India, ERP vs Tally, rescue projects, Razorpay integrations, and FMCG distribution — from an ERPNext architect in Bangalore." />
+	<meta name="twitter:image" content="https://shivanandbanahatti.com/Shivanand.jpg" />
+	<link rel="icon" type="image/jpeg" href="/Shivanand.jpg" />
+	<link rel="apple-touch-icon" href="/Shivanand.jpg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/assets/shivanand_consulting/css/site-theme.css" />
+</head>
+<body class="antialiased">
+	<header id="site-nav" class="nav-shell fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" style="min-height: var(--nav-h);">
+			<a href="index.html" class="inline-flex items-center rounded-full px-3 py-1.5 border border-gray-700" aria-label="Home">
+				<span class="text-lg font-semibold text-gray-100 tracking-wider">SB</span>
+			</a>
+			<nav class="hidden lg:flex items-center gap-5 text-sm text-gray-200 font-medium">
+				<a href="index.html" class="hover:text-white">Home</a>
+				<a href="services.html" class="hover:text-white">Services</a>
+				<a href="industries.html" class="hover:text-white">Industries</a>
+				<a href="case-studies.html" class="hover:text-white">Case Studies</a>
+				<a href="blog.html" class="nav-link-active hover:text-white">Blog</a>
+				<a href="about.html" class="hover:text-white">About</a>
+				<a href="contact.html" class="hover:text-white">Contact</a>
+			</nav>
+			<div class="hidden lg:block">
+				<a href="https://wa.me/919620601250" class="btn-primary whatsapp-link">WhatsApp</a>
+			</div>
+			<button id="nav-toggle" class="lg:hidden p-3 rounded-lg text-white touch-manipulation tap-target" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+			</button>
+		</div>
+	</header>
+
+	<div id="mobile-backdrop"></div>
+	<aside id="mobile-nav" role="dialog" aria-modal="true" aria-label="Main menu">
+		<div class="px-5 pt-2 flex justify-end">
+			<button id="nav-close" class="text-white p-3 rounded-lg tap-target" type="button" aria-label="Close menu">
+				<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+			</button>
+		</div>
+		<nav class="px-7 mt-6 flex flex-col gap-4 text-white text-lg">
+			<a href="index.html" class="mobile-nav-link py-2">Home</a>
+			<a href="services.html" class="mobile-nav-link py-2">Services</a>
+			<a href="industries.html" class="mobile-nav-link py-2">Industries</a>
+			<a href="case-studies.html" class="mobile-nav-link py-2">Case Studies</a>
+			<a href="blog.html" class="mobile-nav-link py-2 nav-link-active">Blog</a>
+			<a href="about.html" class="mobile-nav-link py-2">About</a>
+			<a href="contact.html" class="mobile-nav-link py-2">Contact</a>
+			<a href="https://wa.me/919620601250" class="btn-primary mt-2 justify-center whatsapp-link">WhatsApp</a>
+		</nav>
+	</aside>
+
+	<main>
+		<section class="page-hero">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6">
+				<p class="eyebrow text-gray-400">Notes for operators</p>
+				<h1 class="mt-2">Blog</h1>
+				<p class="lead mt-4 text-lg max-w-3xl">Short, practical writing on ERPNext delivery in India — scope, cost signals, when to rescue a programme, and integrations that actually ship. For engagement models and delivery detail, see <a href="services.html" class="underline hover:text-gray-200">services</a> and <a href="case-studies.html" class="underline hover:text-gray-200">case studies</a>.</p>
+			</div>
+		</section>
+
+		<section class="py-12 md:py-20 stratin-light">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
+				<article class="stratin-card p-6 reveal">
+					<p class="text-xs text-gray-500 uppercase tracking-wide">Implementation · India</p>
+					<h2 class="text-xl mt-2"><a href="blog-erpnext-implementation-cost-india.html" class="hover:underline">What drives ERPNext implementation cost in India?</a></h2>
+					<p class="text-gray-600 mt-2 text-sm">Sites, users, custom DocTypes, integrations, data migration, and training — how to think about budget without a generic “per user” fantasy number.</p>
+					<p class="mt-3"><a href="blog-erpnext-implementation-cost-india.html" class="text-sm font-medium text-gray-900 hover:underline">Read →</a></p>
+				</article>
+				<article class="stratin-card p-6 reveal">
+					<p class="text-xs text-gray-500 uppercase tracking-wide">Comparison · GST</p>
+					<h2 class="text-xl mt-2"><a href="blog-erpnext-vs-tally-growing-business-india.html" class="hover:underline">ERPNext vs Tally for a growing business in India</a></h2>
+					<p class="text-gray-600 mt-2 text-sm">When Tally is enough, when multi-location inventory and workflow matter, and how GST compliance fits into the picture.</p>
+					<p class="mt-3"><a href="blog-erpnext-vs-tally-growing-business-india.html" class="text-sm font-medium text-gray-900 hover:underline">Read →</a></p>
+				</article>
+				<article class="stratin-card p-6 reveal">
+					<p class="text-xs text-gray-500 uppercase tracking-wide">Rescue · Delivery</p>
+					<h2 class="text-xl mt-2"><a href="blog-signs-your-erp-implementation-needs-rescue.html" class="hover:underline">Signs your ERP implementation needs a rescue</a></h2>
+					<p class="text-gray-600 mt-2 text-sm">Stale UAT, shadow spreadsheets, “almost live” for quarters — patterns I see before a stabilisation or takeover engagement.</p>
+					<p class="mt-3"><a href="blog-signs-your-erp-implementation-needs-rescue.html" class="text-sm font-medium text-gray-900 hover:underline">Read →</a></p>
+				</article>
+				<article class="stratin-card p-6 reveal">
+					<p class="text-xs text-gray-500 uppercase tracking-wide">Payments · Integration</p>
+					<h2 class="text-xl mt-2"><a href="blog-razorpay-erpnext-payments-integration-india.html" class="hover:underline">Razorpay and ERPNext: a sane integration checklist</a></h2>
+					<p class="text-gray-600 mt-2 text-sm">Webhooks, reconciliation, refunds, and what to automate first so finance trusts the numbers.</p>
+					<p class="mt-3"><a href="blog-razorpay-erpnext-payments-integration-india.html" class="text-sm font-medium text-gray-900 hover:underline">Read →</a></p>
+				</article>
+				<article class="stratin-card p-6 reveal">
+					<p class="text-xs text-gray-500 uppercase tracking-wide">FMCG · Distribution</p>
+					<h2 class="text-xl mt-2"><a href="blog-fmcg-distribution-erpnext.html" class="hover:underline">FMCG distribution on ERPNext: what usually wins</a></h2>
+					<p class="text-gray-600 mt-2 text-sm">Beat plans, van sales, secondary schemes, and stock truth across depots — the operational layer ERP must reflect.</p>
+					<p class="mt-3"><a href="blog-fmcg-distribution-erpnext.html" class="text-sm font-medium text-gray-900 hover:underline">Read →</a></p>
+				</article>
+			</div>
+		</section>
+
+		<section class="py-12 md:py-16 bg-gray-900 text-gray-100">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+				<h2 class="text-white">Want this applied to your stack?</h2>
+				<p class="mt-3 text-gray-400 max-w-2xl mx-auto">Share context on <a href="contact.html" class="underline hover:text-white">contact</a> or WhatsApp — I’ll reply with a realistic next step.</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="bg-black text-gray-400 py-12 md:py-16">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-8 text-sm">
+			<div>
+				<h3 class="text-white text-base">Shivanand Banahatti</h3>
+				<p class="mt-2 text-gray-400">ERPNext Architect &amp; Frappe Developer — freelance consulting, Bangalore. Cofounder, <a href="https://medverse.care/" class="underline hover:text-white">Medverse Care</a>.</p>
+			</div>
+			<div>
+				<h3 class="text-white text-base">Site</h3>
+				<div class="mt-2 space-y-1">
+					<p><a href="services.html" class="hover:text-white">Services</a></p>
+					<p><a href="industries.html" class="hover:text-white">Industries</a></p>
+					<p><a href="case-studies.html" class="hover:text-white">Case Studies</a></p>
+					<p><a href="blog.html" class="hover:text-white">Blog</a></p>
+					<p><a href="about.html" class="hover:text-white">About</a></p>
+					<p><a href="contact.html" class="hover:text-white">Contact</a></p>
+				</div>
+			</div>
+			<div>
+				<h3 class="text-white text-base">Company</h3>
+				<div class="mt-2 space-y-1 text-gray-400 break-words">
+					<p>Email: <a href="mailto:shivanandb@athrutec.com" class="underline">shivanandb@athrutec.com</a></p>
+					<p>WhatsApp: <a href="https://wa.me/919620601250" class="underline whatsapp-link">+91 96206 01250</a></p>
+					<p>Company: <a href="https://athrutec.com" class="underline">athrutec.com</a></p>
+					<p>Medverse Care: <a href="https://medverse.care/" class="underline">medverse.care</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 mt-8 pt-6 border-t border-gray-800 text-xs text-gray-500">
+			<span>© 2026 Shivanand Banahatti · ATHRU Technologies Private Limited · Bangalore, India</span>
+		</div>
+	</footer>
+	<div class="mobile-sticky-cta lg:hidden">
+		<a href="contact.html" class="btn-primary">Contact →</a>
+	</div>
+	<script src="/assets/shivanand_consulting/js/site.js" defer></script>
+</body>
+</html>
